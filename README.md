@@ -14,6 +14,8 @@ who is basically the same except the relative paths to the images.
 
 ## Usage
 
-    $ java -jar <jarfile> -u
-    $ java -jar <jarfile> <panofile>
-    $ java -jar <jarfile> <dir>
+Requires Java 11 or higher
+
+    $ java -jar apr.jar -u
+    $ java -jar apr.jar <panofile>
+    $ java -jar apr.jar <dir>

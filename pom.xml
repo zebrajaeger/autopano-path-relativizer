@@ -37,6 +37,7 @@
     </properties>
 
     <build>
+        <finalName>apr</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -70,8 +71,8 @@
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
-                            <classifier>spring-boot</classifier>
                             <mainClass>de.zebrajaeger.autopanaopathrelativizer.App</mainClass>
+<!--                            <finalName>NewJarName</finalName>-->
                         </configuration>
                     </execution>
                 </executions>
