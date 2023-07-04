@@ -3,19 +3,13 @@ package de.zebrajaeger.autopanaopathrelativizer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.cli.*;
 
-import java.io.File;
-
 @Slf4j
 public class App {
     public static void main(String[] args) throws ParseException {
         log.info("START");
-//        new Relativizer(FileNameTransformer.DEFAULT).relativize(new File("./test.pano"));
-//        return;
 
-        final Relativizer relativizer = new Relativizer(FileNameTransformer.DEFAULT);
         if (args.length == 0) {
-            relativizer.relativize(new File(System.getProperty("user.dir")));
-            return;
+            args = new String[]{"-u"};
         }
 
         Options options = new Options();
@@ -35,6 +29,7 @@ public class App {
         if (cmd.hasOption("u")) {
             new Ui().setVisible(true);
         } else {
+            final Relativizer relativizer = new Relativizer(FileNameTransformer.DEFAULT);
             relativizer.relativizeAllArgs(cmd.getArgList());
         }
     }
